@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>블로그 목록</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+  <!-- Custom CSS -->
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- 페이지 헤더 -->
+  <div class="bg-light py-5" style="margin-top: 56px;">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-3">
+          <li class="breadcrumb-item"><a href="index.html">홈</a></li>
+          <li class="breadcrumb-item active" aria-current="page">블로그</li>
+        </ol>
+      </nav>
+      <h1 class="display-4">블로그</h1>
+      <p class="lead">개발, 디자인, 그리고 일상의 이야기</p>
+    </div>
+  </div>
+
+  <!-- 필터 탭 -->
+  <div class="container my-5">
+    <ul class="nav nav-pills justify-content-center mb-4" role="tablist">
+      <li class="nav-item">
+        <button
+          class="nav-link active"
+          data-bs-toggle="pill"
+          data-bs-target="#all"
+          type="button"
+        >
+          전체
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          data-bs-toggle="pill"
+          data-bs-target="#programming"
+          type="button"
+        >
+          프로그래밍
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          data-bs-toggle="pill"
+          data-bs-target="#design"
+          type="button"
+        >
+          디자인
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          data-bs-toggle="pill"
+          data-bs-target="#daily"
+          type="button"
+        >
+          일상
+        </button>
+      </li>
+    </ul>
+
+    <!-- 탭 콘텐츠 -->
+    <div class="tab-content">
+      <!-- 전체 탭 -->
+      <div class="tab-pane fade show active" id="all">
+        <div class="row g-4">
+          <!-- 메인 콘텐츠 영역 -->
+          <div class="col-lg-8">
+            <!-- 포스트 카드 1 -->
+            <article class="card mb-4 shadow-sm">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="https://placehold.co/300x200"
+                    class="img-fluid rounded-start h-100 object-fit-cover"
+                    alt="포스트 이미지"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div class="mb-2">
+                      <span class="badge bg-primary">프로그래밍</span>
+                      <span class="text-muted small ms-2"
+                        ><i class="bi bi-calendar3"></i> 2025.01.15</span
+                      >
+                    </div>
+                    <h5 class="card-title">
+                      Bootstrap 5로 반응형 웹사이트 만들기
+                    </h5>
+                    <p class="card-text">
+                      Bootstrap 5의 새로운 기능들을 활용하여 모던한 반응형
+                      웹사이트를 만드는 방법을 알아봅니다.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <a
+                        href="blog-single.html"
+                        class="btn btn-sm btn-outline-primary"
+                      >
+                        자세히 보기 <i class="bi bi-arrow-right"></i>
+                      </a>
+                      <div class="text-muted small">
+                        <i class="bi bi-eye"></i> 1,234
+                        <i class="bi bi-chat ms-2"></i> 23
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 포스트 카드 2 -->
+            <article class="card mb-4 shadow-sm">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="https://placehold.co/300x200"
+                    class="img-fluid rounded-start h-100 object-fit-cover"
+                    alt="포스트 이미지"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div class="mb-2">
+                      <span class="badge bg-success">디자인</span>
+                      <span class="text-muted small ms-2"
+                        ><i class="bi bi-calendar3"></i> 2025.01.14</span
+                      >
+                    </div>
+                    <h5 class="card-title">UI/UX 디자인 트렌드 2025</h5>
+                    <p class="card-text">
+                      2025년 주목해야 할 UI/UX 디자인 트렌드와 실제 적용 사례를
+                      소개합니다.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <a
+                        href="blog-single.html"
+                        class="btn btn-sm btn-outline-primary"
+                      >
+                        자세히 보기 <i class="bi bi-arrow-right"></i>
+                      </a>
+                      <div class="text-muted small">
+                        <i class="bi bi-eye"></i> 892
+                        <i class="bi bi-chat ms-2"></i> 15
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 페이지네이션 -->
+            <nav aria-label="블로그 페이지">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1"
+                    ><i class="bi bi-chevron-left"></i
+                  ></a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#"
+                    ><i class="bi bi-chevron-right"></i
+                  ></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- 사이드바 -->
+          <div class="col-lg-4">
+            <!-- 프로필 카드 -->
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body text-center">
+                <img
+                  src="https://placehold.co/150x150"
+                  class="rounded-circle mb-3"
+                  alt="프로필"
+                />
+                <h5 class="card-title">홍길동</h5>
+                <p class="text-muted">풀스택 개발자</p>
+                <p class="card-text small">
+                  웹 개발과 디자인을 사랑하는 개발자입니다. 새로운 기술을
+                  배우고 공유하는 것을 좋아합니다.
+                </p>
+                <div class="d-flex justify-content-center gap-2">
+                  <a href="#" class="btn btn-sm btn-outline-dark"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                  <a href="#" class="btn btn-sm btn-outline-primary"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a href="#" class="btn btn-sm btn-outline-info"
+                    ><i class="bi bi-twitter"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 검색 위젯 -->
+            <div class="card mb-4 shadow-sm">
+              <div class="card-header bg-primary text-white">
+                <i class="bi bi-search me-2"></i>검색
+              </div>
+              <div class="card-body">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="검색어 입력"
+                  />
+                  <button class="btn btn-primary" type="button">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 카테고리 위젯 -->
+            <div class="card mb-4 shadow-sm">
+              <div class="card-header bg-primary text-white">
+                <i class="bi bi-folder me-2"></i>카테고리
+              </div>
+              <div class="list-group list-group-flush">
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                >
+                  프로그래밍
+                  <span class="badge bg-primary rounded-pill">14</span>
+                </a>
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                >
+                  디자인
+                  <span class="badge bg-primary rounded-pill">8</span>
+                </a>
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                >
+                  일상
+                  <span class="badge bg-primary rounded-pill">5</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- 인기 포스트 위젯 -->
+            <div class="card mb-4 shadow-sm">
+              <div class="card-header bg-primary text-white">
+                <i class="bi bi-fire me-2"></i>인기 포스트
+              </div>
+              <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action">
+                  <h6 class="mb-1">React vs Vue 비교 분석</h6>
+                  <small class="text-muted">조회수 5,234</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <h6 class="mb-1">CSS Grid 완벽 가이드</h6>
+                  <small class="text-muted">조회수 3,892</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <h6 class="mb-1">개발자 포트폴리오 만들기</h6>
+                  <small class="text-muted">조회수 2,456</small>
+                </a>
+              </div>
+            </div>
+
+            <!-- 태그 클라우드 -->
+            <div class="card shadow-sm">
+              <div class="card-header bg-primary text-white">
+                <i class="bi bi-tags me-2"></i>태그
+              </div>
+              <div class="card-body">
+                <span class="badge bg-secondary m-1">HTML</span>
+                <span class="badge bg-secondary m-1">CSS</span>
+                <span class="badge bg-secondary m-1">JavaScript</span>
+                <span class="badge bg-secondary m-1">Bootstrap</span>
+                <span class="badge bg-secondary m-1">React</span>
+                <span class="badge bg-secondary m-1">Node.js</span>
+                <span class="badge bg-secondary m-1">UI/UX</span>
+                <span class="badge bg-secondary m-1">웹디자인</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 프로그래밍 탭, 디자인 탭, 일상 탭 콘텐츠도 같은 구조로 추가할 수 있습니다 -->
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+</body>
+</html>
