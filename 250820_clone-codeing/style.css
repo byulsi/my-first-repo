@@ -11,7 +11,7 @@ body {
     background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
     /* 힌트: #667eea, #764ba2 같은 색상 조합 사용 */
     color: white;
-    min-height: 450px;
+    min-height: 500px;
 }
 
 /* 3. 프로필 이미지 크기 설정 (150px ~ 200px 추천) */
@@ -67,4 +67,42 @@ h2::after {
 
 .btn:hover {
     transform: scale(1.05);  /* 1.05 추천 */
+}
+
+/* 태블릿 반응형 (768px ~ 991px) */
+@media (max-width: 991px) {
+    /* 1. 카드 레이아웃 조정 */
+    .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    /* 2. 패딩 조정 */
+    section {
+        padding: 40px 0;
+    }
+}
+
+/* 모바일 반응형 (768px 이하) */
+@media (max-width: 768px) {
+    /* 3. 모바일에서 프로필 이미지 크기 조정 */
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* 4. 모바일에서 제목 크기 조정 */
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    /* 5. hero 섹션 높이 조정 */
+    .hero-section {
+        min-height: 400px;
+        padding: 30px 0;
+    }
+
+    /* 6. 네비게이션 간격 조정 */
+    .navbar-nav {
+        text-align: center;
+    }
 }
