@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM practice</title>
+</head>
+<body>
+    <h1 id="title">나의 첫 DOM 실습</h1>
+    <p class="intro">DOM 기초 배우기</p>
+    <ul id="list">
+        <li class="item">첫 번째</li>
+        <li class="item">두 번째</li>
+        <li class="item">세 번째</li>
+    </ul>
+    <button id="btn">실습 시작</button><br><br>
+    <button id="myButton">Hey!!</button><br><br>
+    <div id="box" style="width: 100px; height: 100px; background-color: lightgray; text-align: center; line-height: 100px;">
+        박스</div>
+    <br><br>
+    <div id="parent"><p id="child">삭제될 문단</p></div>
+    <br><br>
+    <div id ="myDiv"></div>
+    <br><br>
+    <script>
+        const titleE1 = document.getElementById('title');
+        console.log('getElementById:', titleE1);
+        console.log('제목 텍스트:', titleE1.textContent);
+        const introE1 = document.querySelector('.intro');
+        console.log('querySelector:', introE1);
+        const firstItem = document.querySelector('.item');
+        console.log('첫 번째 .item:', firstItem.textContent)
+
+        // 1. 버튼 요소 만들기
+        const newButton = document.createElement("button");
+
+        // 2. 버튼에 텍스트 넣기
+        newButton.textContent = "클릭하세요!";
+
+        // 3. body에 버튼 추가하기
+        document.body.appendChild(newButton);
+
+        const myButton = document.getElementById("myButton");
+
+        // 클릭 이벤트 추가하기
+        myButton.addEventListener('click', function() {
+            alert("버튼이 클릭되었습니다!");
+        });
+
+        const box = document.getElementById("box");
+
+        // 배경색을 파란색으로 변경
+        box.style.backgroundColor = "blue";
+
+        // 글자색을 흰색으로 변경
+        box.style.color = "white";
+
+        // 너비를 200px로 설정
+        box.style.width= "200px";
+
+        const parent = document.getElementById("parent");
+        const child = document.getElementById("child");
+        child.remove();
+        
+        const div = document.getElementById("myDiv")
+
+    
+
+        div.textContent = "<strong> 굵은 글씨! </strong>";
+        
+    </script>
+</body>
+</html>
