@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Try-Catch</title>
+</head>
+<body>
+    <script>
+        const badJSON = `{"name": "홍길동", "age": 30}`;
+        try {
+            const data = JSON.parse(badJSON);
+            console.log("파싱 성공", date.name);            
+        } catch (error) {
+            console.error("파싱 실패: ", error.message);
+        } finally {
+            console.log("파싱 시도 완료");
+        }
+    </script>
+</body>
+</html>

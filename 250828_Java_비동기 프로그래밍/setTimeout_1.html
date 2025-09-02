@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <script>
+        function 디지털시계() {
+            setInterval(() => {
+                const 지금 = new Date();
+                const 시 = 지금.getHours();toString().padStart(2, '0');
+                const 분 = 지금.getMinutes().toString().padStart(2, '0');
+                const 초 = 지금.getSeconds().toString().padStart(2, '0');
+
+                console.clear();
+                console.log(`${시}:${분}:${초}`);
+            }, 1000);
+        }
+
+        디지털시계();
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아날로그 시계</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to right, #667eea, #764ba2);
+        font-family: 'Arial', sans-serif;
+      }
+      .clock {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+      }
+      .clock-face {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border: 3px solid #333;
+        border-radius: 50%;
+        background: white;
+      }
+      /* 시계 숫자 스타일 - 원형 배치 */
+      .number {
+        position: absolute;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        left: 50%;
+        top: 50%;
+      }
+      .number1  { transform: translate(-50%, -50%) rotate(30deg)  translateY(-100px) rotate(-30deg); }
+      .number2  { transform: translate(-50%, -50%) rotate(60deg)  translateY(-100px) rotate(-60deg); }
+      .number3  { transform: translate(-50%, -50%) rotate(90deg)  translateY(-100px) rotate(-90deg); }
+      .number4  { transform: translate(-50%, -50%) rotate(120deg) translateY(-100px) rotate(-120deg); }
+      .number5  { transform: translate(-50%, -50%) rotate(150deg) translateY(-100px) rotate(-150deg); }
+      .number6  { transform: translate(-50%, -50%) rotate(180deg) translateY(-100px) rotate(-180deg); }
+      .number7  { transform: translate(-50%, -50%) rotate(210deg) translateY(-100px) rotate(-210deg); }
+      .number8  { transform: translate(-50%, -50%) rotate(240deg) translateY(-100px) rotate(-240deg); }
+      .number9  { transform: translate(-50%, -50%) rotate(270deg) translateY(-100px) rotate(-270deg); }
+      .number10 { transform: translate(-50%, -50%) rotate(300deg) translateY(-100px) rotate(-300deg); }
+      .number11 { transform: translate(-50%, -50%) rotate(330deg) translateY(-100px) rotate(-330deg); }
+      .number12 { transform: translate(-50%, -50%) rotate(0deg)   translateY(-100px) rotate(0deg); }
+      /* 시계 바늘 기본 스타일 - 12시 위치에서 시작 */
+      .hand {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform-origin: bottom center;
+        border-radius: 10px;
+        transform: translateX(-50%) rotate(0deg);
+      }
+      .hour-hand   { width: 6px;  height: 70px;  background: #333; }
+      .minute-hand { width: 4px;  height: 90px;  background: #666; }
+      .second-hand { width: 2px;  height: 100px; background: #f44336; }
+      .center-dot {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #333;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="clock-face">
+        <!-- 시계 숫자들 -->
+        <div class="number number1">1</div>
+        <div class="number number2">2</div>
+        <div class="number number3">3</div>
+        <div class="number number4">4</div>
+        <div class="number number5">5</div>
+        <div class="number number6">6</div>
+        <div class="number number7">7</div>
+        <div class="number number8">8</div>
+        <div class="number number9">9</div>
+        <div class="number number10">10</div>
+        <div class="number number11">11</div>
+        <div class="number number12">12</div>
+        <!-- 시계 바늘들 -->
+        <div class="hand hour-hand"></div>
+        <div class="hand minute-hand"></div>
+        <div class="hand second-hand"></div>
+        <!-- 중앙 점 -->
+        <div class="center-dot"></div>
+      </div>
+    </div>
+    <script>
+      // 시계 바늘 요소들을 가져오기
+      const hourHand   = document.querySelector('.hour-hand');
+      const minuteHand = document.querySelector('.minute-hand');
+      const secondHand = document.querySelector('.second-hand');
+
+      // 시계 업데이트 함수
+      function updateClock() {
+        const now     = new Date();
+        const hours   = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        // 초침 각도 (1초당 6도)
+        const secondDegrees = seconds * 6;
+        // 분침 각도 (1분당 6도 + 초당 0.1도)
+        const minuteDegrees = minutes * 6 + seconds * 0.1;
+        // 시침 각도 (1시간당 30도 + 분당 0.5도)
+        const hourDegrees   = (hours % 12) * 30 + minutes * 0.5;
+
+        // 바늘 회전 적용
+        secondHand.style.transform = `translateX(-50%) rotate(${secondDegrees}deg)`;
+        minuteHand.style.transform = `translateX(-50%) rotate(${minuteDegrees}deg)`;
+        hourHand.style.transform   = `translateX(-50%) rotate(${hourDegrees}deg)`;
+      }
+
+      // 1초마다 시계 업데이트
+      setInterval(updateClock, 1000);
+      // 페이지 로드시 즉시 업데이트
+      updateClock();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>saving objects</title>
+</head>
+<body>
+    <script>
+        const user = {
+            name: '홍길동',
+            age: 25,
+            city: '서울'
+        };
+        
+        localStorage.setItem('userInfo', JSON.stringify(user));
+
+        const savedData = localStorage.getItem('userInfo');
+        const userObject = JSON.parse(savedData);
+
+        console.log('복원된 객체:', userObject);
+    </script>
+</body>
+</html>

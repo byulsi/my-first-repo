@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users/1')
+            .then(response => response.json())
+            .then(data => {
+                console.log('전체 사용자 데이터:', data);
+                console.log('예쁘게 포매팅:', JSON.stringify(data, null, 2));
+                console.table(data);
+            })
+            .catch(error => {
+                console.log('에러 발생:', error);
+            });
+    </script>    
+</body>
+</html>

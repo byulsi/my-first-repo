@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운트다운</title>
+</head>
+<body>
+    <div id="countdown"></div>
+    <script>
+        function 카운트다운(초) {
+            let 남은시간 = 초;
+            const countdownDiv = document.getElementById("countdown");
+
+            const 타이머 = setInterval(() => {
+                if (남은시간 > 0) {
+                    countdownDiv.textContent = `${남은시간}초 남았습니다!`;
+                    남은시간--;
+                } else {
+                    countdownDiv.textContent = "시간 종료!";
+                    clearInterval(타이머);
+                }
+            }, 1000);
+        }
+
+        // 예시: 10초 카운트다운 시작
+        카운트다운(10);
+    </script>
+</body>
+    </script>
+</body>
+</html>

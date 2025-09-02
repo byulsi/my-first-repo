@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 실습</title>
+</head>
+<body>
+    <h1 id="title">나의 첫 DOM 실습</h1>
+    <p class="intro">DOM 기초 배우기</p>
+    <ul id="list">
+        <li class="item">첫 번째</li>
+        <li class="item">두 번째</li>
+        <li class="item">세 번째</li>
+    </ul>
+    <button id="btn">실습 시작</button>
+
+    <!-- 아래에 직접 코드를 작성합니다 -->
+    <script>
+        const titleE1 = document.getElementById('title');
+        console.log('getElementById(\'title\'):', titleE1);
+        console.log('titleE1.textcontent:', titleE1.textContent);
+
+        const introE1 = document.querySelector('.intro');
+        console.log('querySelector(\'.intro\'):', introE1);
+        console.log('introE1.textContent:', introE1.textContent);
+
+        const items = document.querySelectorAll('.item');
+        console.log('querySelectorAll(\'.item\') Nodelist:', items);
+        
+        items.forEach((e1, idx) => {
+            console.log(`${idx}번째 item text:`, e1.textContent);
+        });
+    </script>
+</body>
+</html>

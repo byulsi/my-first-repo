@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>종합문제1</title>
+</head>
+<body>
+    <script>
+                // 문제 5-1: 쇼핑 카트 시스템
+        function createShoppingCart() {
+            let items = [];  // 프라이빗 배열
+
+            return {
+                // 아이템 추가
+                addItem: function(name, price, quantity = 1) {
+                    const item = {
+                        name: name,
+                        price: price,
+                        quantity: quantity,
+                        subtotal: price * quantity
+                    };
+                    items.push(item);  // 배열에 추가
+                    return item;
+                },
+
+                // 전체 아이템 가져오기
+                getItems: function() {
+                    return [...items];  // 복사본 반환
+                },
+
+                // 총액 계산
+                getTotal: function() {
+                    return items.reduce(
+                        (total, item) => total + item.subtotal,  // subtotal 더하기
+                        0
+                    );
+                },
+
+                // 아이템 개수
+                getItemCount: function() {
+                    return items.reduce(
+                        (count, item) => count + item.quantity,  // quantity 더하기
+                        0
+                    );
+                }
+            };
+        }
+
+        // 테스트
+        const cart = createShoppingCart();
+        cart.addItem("노트북", 1000000, 1);
+        cart.addItem("마우스", 30000, 2);
+        cart.addItem("키보드", 80000, 1);
+
+        console.log(cart.getItems());      // 3개 아이템
+        console.log(cart.getTotal());      // 1140000
+        console.log(cart.getItemCount());  // 4개
+    </script>
+</body>
+</html>

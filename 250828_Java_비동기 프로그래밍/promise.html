@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>피자주문</title>
+</head>
+<body>
+<script>
+    function 피자주문(피자종류) {
+        return new Promise((resolve, reject) => {
+            console.log(`${피자종류} 피자 주문이 접수되었습니다!`);
+
+            setTimeout(() => {
+                const 랜덤 = Math.random();
+
+                if (랜덤 > 0.2) {
+                    resolve(`${피자종류} 피자가 완성되었습니다!`);
+                } else {
+                    reject(`${피자종류} 재료가 떨어졌습니다.`);
+                }
+            }, 3000);
+        });
+    }
+
+    피자주문("페퍼로니")
+        .then(메시지 => console.log(메시지))
+        .catch(에러 => console.log(에러));
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>데이터 저장과 불러오기</title>
+</head>
+<body>
+    <script>
+        localStorage.setItem('userName', '김철수');
+
+        const savedName = localStorage.getItem('userName');
+        console.log('저장된 이름:', savedName);
+
+        localStorage.removeItem('userName');
+    </script>
+</body>
+</html>

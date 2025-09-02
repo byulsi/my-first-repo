@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>documents</title>
+</head>
+<body>
+    <script>
+        const productJSON = `{"id": 1001, "name": "이어폰", "price": 89000}`;
+        try {
+            const product = JSON.parse(productJSON);
+            console.log("상품명: ", product.name, "가격: ", product.price);
+        } catch (error) {
+            console.error("파싱 오류: ", error.message);
+        }
+
+        const cart = { items: [{id:1, name: "책", qty:2}], total: 40000 };
+        try {
+            localStorage.setItem("cart", JSON.stringify(cart));
+            console.log("저장 했습니다.");
+        } catch (error) {
+            console.error("저장에 실패했어요: ", error.message);
+        }
+    </script>
+</body>
+</html>
