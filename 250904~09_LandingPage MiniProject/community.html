@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>한마당 – 커뮤니티</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- 헤더 -->
+  <header class="site-header">
+    <nav class="main-nav container">
+      <a href="index.html" class="nav-item">브랜드</a>
+      <a href="products.html" class="nav-item">제품·서비스</a>
+      <a href="community.html" class="nav-item active">커뮤니티</a>
+    </nav>
+  </header>
+
+  <!-- 커뮤니티 섹션 -->
+<section class="community">
+  <div class="container">
+    <h2 class="section-title">커뮤니티</h2>
+
+    <!-- 1) 포럼 요약 뷰 -->
+    <div class="forum-preview">
+      <h3 class="sub-title">최신 게시물</h3>
+      <div class="forum-cards">
+        <div class="forum-card">
+          <img src="assets/images/post1.jpg" alt="게시물 썸네일" class="forum-thumb" />
+          <h4 class="forum-title">업사이클링 팁 공유</h4>
+        </div>
+        <div class="forum-card">…</div>
+        <div class="forum-card">…</div>
+      </div>
+      <a href="#" class="btn btn--secondary">전체 보기</a>
+    </div>
+
+    <!-- 2) 이벤트·워크숍 공지 -->
+    <div class="events">
+      <h3 class="sub-title">다가오는 이벤트</h3>
+      <div class="event-cards">
+        <div class="event-card">
+          <span class="event-date">09/15</span>
+          <h4 class="event-title">가을 업사이클링 워크숍</h4>
+          <a href="#" class="btn btn--primary btn--small">참가 신청</a>
+        </div>
+        <div class="event-card">…</div>
+      </div>
+      <a href="#" class="btn btn--secondary">과거 이벤트 갤러리</a>
+    </div>
+
+    <!-- 3) 리뷰 & 평가 위젯 -->
+    <div class="reviews">
+      <h3 class="sub-title">회원 리뷰</h3>
+      <div class="review-list">
+        <div class="review-item">
+          <div class="review-header">
+            <span class="review-star">★★★★☆</span>
+            <span class="review-user">by 홍길동</span>
+          </div>
+          <p class="review-text">정말 유익한 워크숍이었습니다!</p>
+        </div>
+        <!-- 추가 리뷰 -->
+      </div>
+    </div>
+
+    <!-- 4) 사용자 작품 갤러리 -->
+    <div class="gallery">
+      <h3 class="sub-title">사용자 작품 갤러리</h3>
+      <div class="gallery-grid">
+        <img src="assets/images/work1.jpg" alt="작품1" class="gallery-item" />
+        <img src="assets/images/work2.jpg" alt="작품2" class="gallery-item" />
+        <!-- 추가 이미지 -->
+      </div>
+      <div class="filter-tags">
+        <button class="tag">#친환경</button>
+        <button class="tag">#DIY</button>
+        <button class="tag">#리폼</button>
+      </div>
+    </div>
+
+    <!-- 5) SNS 피드 임베드 -->
+    <div class="social-feed">
+      <h3 class="sub-title">#한마당 SNS</h3>
+      <div class="feed-embed">
+        <!-- 예: Instagram embed code -->
+        <script async src="//www.instagram.com/embed.js"></script>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/EXAMPLE/"></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 자원 회수 서비스 섹션 -->
+<section class="collection-form">
+  <div class="container">
+    <h2 class="section-title">자원 회수 신청</h2>
+    <form name="collection" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="collection" />
+      <div class="form-group">
+        <label for="item">품목</label>
+        <input type="text" id="item" name="item" placeholder="예: 플라스틱 병, 종이 상자" required />
+      </div>
+      <div class="form-group">
+        <label for="quantity">수량</label>
+        <input type="number" id="quantity" name="quantity" min="1" required />
+      </div>
+      <div class="form-group">
+        <label for="address">주소</label>
+        <input type="text" id="address" name="address" required />
+      </div>
+      <button type="submit" class="btn btn--primary">신청하기</button>
+    </form>
+  </div>
+</section>
+
+
+  <!-- 푸터 -->
+  <footer class="site-footer">
+    <div class="container">
+      © 2025 한마당. ALL RIGHTS RESERVED.
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>한마당 – 제품·서비스</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- 헤더 -->
+  <header class="site-header">
+    <nav class="main-nav container">
+      <a href="index.html" class="nav-item">브랜드</a>
+      <a href="products.html" class="nav-item active">제품·서비스</a>
+      <a href="community.html" class="nav-item">커뮤니티</a>
+    </nav>
+  </header>
+
+  <!-- 제품·서비스 섹션 -->
+  <section class="products">
+    <div class="container">
+      <h2 class="section-title">제품·서비스 소개</h2>
+      <!-- 카테고리 네비게이션 -->
+      <ul class="product-tabs">
+        <li class="tab-item active" data-tab="furniture">가구</li>
+        <li class="tab-item" data-tab="accessories">소품</li>
+        <li class="tab-item" data-tab="kits">DIY 키트</li>
+      </ul>
+      <!-- 탭 콘텐츠 -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="furniture">
+          <div class="product-grid">
+            <div class="product-card">
+              <img src="assets/images/product1.jpg" alt="업사이클 의자" class="product-img" />
+              <h3 class="product-title">업사이클 의자</h3>
+              <p class="product-desc">버려진 목재로 만든 친환경 의자</p>
+              <a href="#" class="btn btn--secondary">자세히 보기</a>
+            </div>
+            <!-- 추가 카드 -->
+          </div>
+        </div>
+        <div class="tab-pane" id="accessories">…</div>
+        <div class="tab-pane" id="kits">…</div>
+      </div>
+    </div>
+  </section>
+<!-- 문의 폼 섹션 (제품·서비스 페이지 하단에 추가) -->
+<section class="inquiry-form">
+  <div class="container">
+    <h2 class="section-title">제안서 받기</h2>
+    <form name="inquiry" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="inquiry" />
+      <div class="form-group">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">문의 내용</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary">제출하기</button>
+    </form>
+  </div>
+</section>
+
+  <!-- 푸터 -->
+  <footer class="site-footer">
+    <div class="container">
+      © 2025 한마당. ALL RIGHTS RESERVED.
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

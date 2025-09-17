@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>한마당 – 브랜드 스토리</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+</head>
+<body>
+  <!-- 헤더 -->
+  <header class="site-header">
+    <nav class="main-nav container">
+      <a href="index.html" class="nav-item active">브랜드</a>
+      <a href="products.html" class="nav-item">제품·서비스</a>
+      <a href="community.html" class="nav-item">커뮤니티</a>
+    </nav>
+  </header>
+
+  <!-- 1) 풀스크린 히어로 섹션 -->
+  <section class="hero">
+    <div class="hero__overlay">
+      <h1 class="hero__title">지속 가능한 업사이클링의 시작</h1>
+      <p class="hero__tagline">한마당에서 자원을 재탄생시키세요</p>
+      <a href="#brand-story" class="btn btn--primary">우리 이야기</a>
+    </div>
+  </section>
+
+  <!-- 2) 브랜드 스토리 하이라이트 -->
+  <section id="brand-story" class="brand-story">
+    <div class="container">
+      <h2 class="section-title">한마당의 미션 & 비전</h2>
+      <div class="story-grid">
+        <div class="story-item" data-aos="fade-up">
+          <img src="assets/icons/icon-mission.svg" alt="Mission" class="story-icon" />
+          <h3 class="story-title">미션</h3>
+          <p class="story-desc">버려진 자원을 새로운 가치로 재탄생시킵니다.</p>
+        </div>
+        <div class="story-item" data-aos="fade-up">
+          <img src="assets/icons/icon-vision.svg" alt="Vision" class="story-icon" />
+          <h3 class="story-title">비전</h3>
+          <p class="story-desc">모두가 함께하는 업사이클링 커뮤니티를 조성합니다.</p>
+        </div>
+        <div class="story-item keywords" data-aos="fade-up">
+          <h3 class="story-title">핵심 키워드</h3>
+          <ul class="keyword-list">
+            <li class="keyword">친환경</li>
+            <li class="keyword">혁신</li>
+            <li class="keyword">커뮤니티</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) 연대기 타임라인 -->
+  <section class="timeline">
+    <div class="container">
+      <h2 class="section-title">한마당의 여정</h2>
+      <div class="timeline__wrapper">
+        <div class="timeline__item">
+          <span class="timeline__date">2020</span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">한마당 설립</h3>
+            <p class="timeline__desc">자원 재탄생 플랫폼 ‘한마당’ 공식 론칭</p>
+          </div>
+        </div>
+        <!-- 추가 이정표 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="site-footer">
+    <div class="container">
+      © 2025 한마당. ALL RIGHTS RESERVED.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+</body>
+</html>
