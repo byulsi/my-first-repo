@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: #f0f0f0;
+      }
+      select,
+      button {
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+      }
+      button {
+        background: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #45a049;
+      }
+      #totalRest {
+        margin: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>상태 선택</h3>
+    <select id="statusSelect">
+      <option value="참여 중">참여 중</option>
+      <option value="자리 비움">자리 비움</option>
+      <option value="화장실">화장실</option>
+      <option value="휴식">휴식</option>
+      <option value="외출">외출</option>
+    </select>
+    <button onclick="setStatus()">상태 설정</button>
+    <button onclick="closeWidget()">닫기</button>
+    <p id="totalRest">총 휴식 시간: 0분</p>
+
+    <script>
+      // 위젯 메시지 수신 (초기화)
+      App.onMessage.Add(function (data) {
+        if (data.type === "init") {
+          document.getElementById("statusSelect").value = data.status;
+          document.getElementById(
+            "totalRest"
+          ).textContent = `총 휴식 시간: ${data.totalRestMinutes}분`;
+        }
+      });
+
+      function setStatus() {
+        const status = document.getElementById("statusSelect").value;
+        App.sendMessage({ type: "set_status", status: status });
+      }
+      function closeWidget() {
+        App.sendMessage({ type: "close" });
+      }
+    </script>
+  </body>
+</html>

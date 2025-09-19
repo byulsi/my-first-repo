@@ -1,0 +1,8 @@
+{
+  "appId": "YourAppID",
+  "name": "StatusCheckApp",
+  "description": "App for checking participant status",
+  "type": "sidebar",
+  "debug": false,
+  "logsToChat": false
+}

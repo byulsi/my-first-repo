@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Smooth animation 클래스 정의 */
+.smooth-animation {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+}
+
+/* 초기 상태를 위한 클래스 */
+.smooth-hidden {
+  transform: translateX(-20px);
+  opacity: 0;
+}
