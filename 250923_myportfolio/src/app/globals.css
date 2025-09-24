@@ -1,0 +1,18 @@
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 전역 폰트 설정 */
+html,
+body {
+  font-family: "Pretendard", sans-serif;
+  background-color: #f9fafb; /* 연한 그레이 배경 */
+  color: #1f2937; /* 다크 그레이 텍스트 */
+  scroll-behavior: smooth;
+}
+
+/* 링크 기본 스타일 */
+a {
+  text-decoration: none;
+}
